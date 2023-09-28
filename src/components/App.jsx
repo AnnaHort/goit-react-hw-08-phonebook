@@ -1,13 +1,19 @@
-import { ContactList } from './ContactList/ContactList';
+import { Route, Routes } from 'react-router-dom';
+
 import { GlobalStyle, SectionContainer } from './GlobalStyle';
-import { QuizForm } from './QuizForm/QuizForm';
+
+import { Navigation } from './Navigation/Navigation';
 
 export const App = () => {
-
   return (
     <SectionContainer>
-      <QuizForm />
-      <ContactList />
+      <Routes>
+        <Route path="/" element={<Navigation />}></Route>
+        <Route></Route>
+      </Routes>
+
+      {/* <QuizForm />
+      <ContactList /> */}
       <GlobalStyle />
     </SectionContainer>
   );
