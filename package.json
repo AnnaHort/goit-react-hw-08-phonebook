@@ -2,7 +2,7 @@
   "name": "react-homework-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AnnaHort/goit-react-hw-07-phonebook/",
+  "homepage": "https://AnnaHort/goit-react-hw-08-phonebook/",
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.19.3",
     "@reduxjs/toolkit": "^1.9.5",
