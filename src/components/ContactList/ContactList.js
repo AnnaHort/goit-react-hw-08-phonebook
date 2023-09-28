@@ -10,7 +10,7 @@ import { deleteTask, fetchTasks } from 'redux/operations';
 import { getTasks, selectFilter } from 'redux/selectors';
 import { findContact } from 'redux/contactSlice';
 
-export const ContactList = ({ item }) => {
+export const ContactList = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
 
