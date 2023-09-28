@@ -1,5 +1,11 @@
+import { ContactList } from 'components/ContactList/ContactList';
+import { QuizForm } from 'components/QuizForm/QuizForm';
+
 export const ContactsPage = () => {
-    return (
-        <h2>Contacts Page</h2>
-    )
-}
+  return (
+    <>
+      <QuizForm />
+      <ContactList />
+    </>
+  );
+};
