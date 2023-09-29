@@ -4,8 +4,8 @@ import { GlobalStyle, SectionContainer } from './GlobalStyle';
 
 import { Navigation } from './Navigation/Navigation';
 
-import { LoginPage } from './pages/LoginPage';
-import { ContactsPage } from './pages/ContactsPage';
+import { LoginPage } from './pages/LoginPage/LoginPage';
+import { ContactsPage } from './pages/ContactsPage/ContactsPage';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage';
 
 export const App = () => {
