@@ -6,20 +6,19 @@ import { Navigation } from './Navigation/Navigation';
 
 import { LoginPage } from './pages/LoginPage';
 import { ContactsPage } from './pages/ContactsPage';
-import { RegisterPage } from './pages/RegisterPage';
+import { RegisterPage } from './pages/RegisterPage/RegisterPage';
 
 export const App = () => {
   return (
     <SectionContainer>
       <Routes>
-        <Route path="/" element={<Navigation />}></Route>
-        <Route path="/register" element={<RegisterPage />}></Route>
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/contacts" element={<ContactsPage />}></Route>
+        <Route path="/" element={<Navigation />}>
+          <Route path="register" element={<RegisterPage />}></Route>
+          <Route path="login" element={<LoginPage />}></Route>
+          <Route path="contacts" element={<ContactsPage />}></Route>
+        </Route>
       </Routes>
 
-      {/* <QuizForm />
-      <ContactList /> */}
       <GlobalStyle />
     </SectionContainer>
   );
