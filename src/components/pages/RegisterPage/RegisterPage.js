@@ -1,12 +1,14 @@
 import { RegisterForm } from "components/RegisterForm/RegisterForm";
+import { TitleStyle } from "./RegisterPage.styled";
 
 
  const RegisterPage = () => {
   return (
     <div>
-      <h2>Register Page</h2>
+      <TitleStyle>Register Page</TitleStyle>
       <RegisterForm/>
     </div>
   );
 };
+
 export default RegisterPage;

@@ -1,19 +1,23 @@
+import { Link } from "react-router-dom";
+import { ButtonStyled, EmailStyled, FormStyled, LabelText, LoginButtonStyled, RegistrationButtonStyled } from "./LoginForm.styled";
+
 export const LoginForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
   };
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit}>
+    
+    <FormStyled autoComplete="off" onSubmit={handleSubmit}>
       <label>
-        Email
-        <input type="email" name="email" />
+        <input type="email" name="email" placeholder="Email"/>
       </label>
       <label>
-        Password
-        <input type="password" name="password" />
+        <input type="password" name="password" placeholder="Password"/>
       </label>
-      <button type="submit">Log In</button>
-    </form>
+      <Link to='/userMenu'>Log In</Link>
+      
+      <Link to="/register">Registration</Link>
+    </FormStyled>
   );
 };

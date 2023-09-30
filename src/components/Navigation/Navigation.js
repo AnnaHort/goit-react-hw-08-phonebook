@@ -1,15 +1,24 @@
 import { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { ListStyled, NavigationContainer, NavigationTextStyle } from './Navigation.styled';
 
 export const Navigation = () => {
   return (
     <>
-      <ul>
-        <Link to="/">Navigation</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/contacts">Contacts</Link>
-      </ul>
+      <ListStyled>
+        <li>
+          <NavigationTextStyle to="/">Navigation</NavigationTextStyle>
+        </li>
+        <NavigationContainer>
+          <li>
+            <NavigationTextStyle to="/login">Login</NavigationTextStyle>
+          </li>
+          <li>
+            <NavigationTextStyle to="/userMenu">Menu</NavigationTextStyle>
+          </li>
+        </NavigationContainer>
+      </ListStyled>
+
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>

@@ -1,9 +1,10 @@
 import { LoginForm } from 'components/LoginForm/LoginForm';
+import { TitleStyle } from './LoginPage.styled';
 
  const LoginPage = () => {
   return (
     <>
-      <h2>Login Page</h2>
+      <TitleStyle>Login Page</TitleStyle>
       <LoginForm />
     </>
   );

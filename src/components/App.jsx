@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { GlobalStyle, SectionContainer } from './GlobalStyle';
 import { Navigation } from './Navigation/Navigation';
 import { lazy } from 'react';
+import { UserMenu } from './UserMenu/UserMenu';
 
 
 
@@ -17,9 +18,10 @@ export const App = () => {
     <SectionContainer>
       <Routes>
         <Route path="/" element={<Navigation />}>
-          <Route path="register" element={<RegisterPage />}></Route>
+          <Route path="register" element={<RegisterPage/>}></Route>
           <Route path="login" element={<LoginPage />}></Route>
           <Route path="contacts" element={<ContactsPage />}></Route>
+          <Route path="UserMenu" element={<UserMenu />}></Route>
         </Route>
       </Routes>
 
