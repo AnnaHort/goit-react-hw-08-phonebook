@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import {
   ContainerStyled,
   ListElementStyle,
-  ListStyle,
   TitleStyle,
   UserData,
   UserMenuListStyle,
