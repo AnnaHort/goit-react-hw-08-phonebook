@@ -1,7 +1,7 @@
 import { ContactList } from 'components/ContactList/ContactList';
 import { QuizForm } from 'components/QuizForm/QuizForm';
 
-export const ContactsPage = () => {
+ const ContactsPage = () => {
   return (
     <>
       <QuizForm />
@@ -9,3 +9,5 @@ export const ContactsPage = () => {
     </>
   );
 };
+
+export default ContactsPage;

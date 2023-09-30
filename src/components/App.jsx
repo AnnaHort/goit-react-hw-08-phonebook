@@ -1,12 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
-
 import { GlobalStyle, SectionContainer } from './GlobalStyle';
-
 import { Navigation } from './Navigation/Navigation';
+import { lazy } from 'react';
 
-import { LoginPage } from './pages/LoginPage/LoginPage';
-import { ContactsPage } from './pages/ContactsPage/ContactsPage';
-import { RegisterPage } from './pages/RegisterPage/RegisterPage';
+
+
+// const Movies = lazy(() => import('../components/Movies/MoviesPages'));
+const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
+const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
+const ContactsPage = lazy(() => import('./pages/ContactsPage/ContactsPage'));
+
+
 
 export const App = () => {
   return (
