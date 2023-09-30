@@ -1,15 +1,34 @@
 import { Link } from 'react-router-dom';
-import { ContainerStyled, TitleStyle } from './UserMenu.styled';
+import {
+  ContainerStyled,
+  ListElementStyle,
+  ListStyle,
+  TitleStyle,
+  UserData,
+  UserMenuListStyle,
+} from './UserMenu.styled';
 
 export const UserMenu = () => {
   return (
     <>
       <TitleStyle>User Menu</TitleStyle>
       <ContainerStyled>
-        <p>UserName</p>
-        <p>mango@mail.com</p>
-        <Link to="/contacts">My Phonebook</Link>
-        <Link to="/login">Logout</Link>
+        <ul>
+          <ListElementStyle>
+            <UserData>Your name: </UserData>
+          </ListElementStyle>
+          <ListElementStyle>
+            <UserData>Your email: </UserData>
+          </ListElementStyle>
+        </ul>
+        <UserMenuListStyle>
+          <li>
+            <Link to="/contacts">My Phonebook</Link>
+          </li>
+          <li>
+            <Link to="/login">Logout</Link>
+          </li>
+        </UserMenuListStyle>
       </ContainerStyled>
     </>
   );

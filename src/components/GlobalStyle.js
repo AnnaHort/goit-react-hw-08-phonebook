@@ -34,4 +34,5 @@ button {
 
 export const SectionContainer = styled.div`
 margin-left: 20px;
+margin-right: 20px;
 `
