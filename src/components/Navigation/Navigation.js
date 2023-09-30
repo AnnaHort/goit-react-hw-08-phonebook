@@ -1,31 +1,32 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ListStyled, NavigationTextStyle } from './Navigation.styled';
+import { Menu } from 'components/Header/Menu';
+import { AuthNav } from 'components/Header/AuthNav';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { isLoggedIn } from 'redux/auth/selectors';
 
 export const Navigation = () => {
+
+  const login = useSelector(isLoggedIn)
+
   return (
     <>
+     <header>
       <ListStyled>
         <li>
           <NavigationTextStyle to="/">Navigation</NavigationTextStyle>
         </li>
+        {login ? <Menu/> :  <AuthNav/>}
 
-        <li>
-          <NavigationTextStyle to="/userMenu">Menu</NavigationTextStyle>
-        </li>
-
-        <li>
-          <NavigationTextStyle to="/contacts">Contacts</NavigationTextStyle>
-        </li>
-
-        <li>
-          <NavigationTextStyle to="/register">Register</NavigationTextStyle>
-        </li>
       </ListStyled>
+      </header>
 
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
+
     </>
+   
   );
 };
