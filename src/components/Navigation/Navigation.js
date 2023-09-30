@@ -9,6 +9,18 @@ export const Navigation = () => {
         <li>
           <NavigationTextStyle to="/">Navigation</NavigationTextStyle>
         </li>
+
+        <li>
+          <NavigationTextStyle to="/userMenu">Menu</NavigationTextStyle>
+        </li>
+
+        <li>
+          <NavigationTextStyle to="/contacts">Contacts</NavigationTextStyle>
+        </li>
+
+        <li>
+          <NavigationTextStyle to="/register">Register</NavigationTextStyle>
+        </li>
       </ListStyled>
 
       <Suspense fallback={<div>Loading...</div>}>

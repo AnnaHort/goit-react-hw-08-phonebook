@@ -3,22 +3,14 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
-// додавання токену
-const setAuthHeader = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
-
 
 // реєстрація
 export const register = createAsyncThunk(
   'auth/register',
   async (userData, thunkAPI) => {
     try {
-      const res = await axios.post('/users/signup', userData);
-      // After successful registration, add the token to the HTTP header
-      setAuthHeader(res.meta.requestId);
-      console.log(setAuthHeader())
-      return res.data;
+      const response = await axios.post('/users/signup', userData);
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
