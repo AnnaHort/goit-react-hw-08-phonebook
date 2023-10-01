@@ -1,4 +1,3 @@
-import { LoginForm } from "components/LoginForm/LoginForm";
 import { PhoneboofStyle, TitleStyle } from "./NavigationPage.styled";
 
 const NavigationPage = () => {
@@ -6,7 +5,6 @@ const NavigationPage = () => {
         <>
         <PhoneboofStyle>Phonebook</PhoneboofStyle>
          <TitleStyle>The best contact management solution</TitleStyle>
-         <LoginForm/>
         </>
        
     )

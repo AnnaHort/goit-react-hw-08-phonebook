@@ -4,7 +4,6 @@ import { TitleStyle } from './LoginPage.styled';
  const LoginPage = () => {
   return (
     <>
-      <TitleStyle>Login Page</TitleStyle>
       <LoginForm />
     </>
   );

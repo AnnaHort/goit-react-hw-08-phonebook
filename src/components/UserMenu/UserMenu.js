@@ -32,7 +32,6 @@ export const UserMenu = () => {
             <Link to="/contacts">My Phonebook</Link>
           </li>
           <li>
-            <button onClick={()=> dispatch(logOut())}>Logout</button>
             <Link to="/login" onClick={()=> dispatch(logOut())}>Logout</Link>
           </li>
         </UserMenuListStyle>
