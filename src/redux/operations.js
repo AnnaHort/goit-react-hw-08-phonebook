@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://650c93b347af3fd22f67d0a8.mockapi.io';
+// axios.defaults.baseURL = 'https://650c93b347af3fd22f67d0a8.mockapi.io';
 
 
 // отримати всі контакти
