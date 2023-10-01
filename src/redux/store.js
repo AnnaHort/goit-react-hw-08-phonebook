@@ -27,10 +27,8 @@ export const store = configureStore({
 
 // export const store = configureStore({
 //   reducer: {
-//     authReduser: authReducer,
 //     contacts: contactsReducer,
-//     // auth: persistReducer(authPersistConfig, authReducer),
-
+//     auth: persistReducer(authPersistConfig, authReducer),
 //   }
 // });
 

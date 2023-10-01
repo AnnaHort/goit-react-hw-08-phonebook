@@ -3,6 +3,9 @@ import { register } from 'redux/auth/authOperations';
 import { FormStyled } from './RegisterForm.styled';
 import { isLoggedIn } from 'redux/auth/authSelectors';
 import { UserMenu } from 'components/UserMenu/UserMenu';
+import Button from '@mui/material/Button';
+import { TextField } from '@mui/material';
+
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -38,7 +41,8 @@ export const RegisterForm = () => {
       ) : (
         <FormStyled onSubmit={handleOnSubmit}>
           <label>
-            <input
+            <TextField
+            id="outlined-basic" label="Name" variant="outlined"
               type="text"
               name="name"
               placeholder="Name"
@@ -46,7 +50,8 @@ export const RegisterForm = () => {
             />
           </label>
           <label>
-            <input
+            <TextField
+            id="outlined-basic" label="Email" variant="outlined"
               type="email"
               name="email"
               placeholder="Email"
@@ -54,14 +59,14 @@ export const RegisterForm = () => {
             />
           </label>
           <label>
-            <input
+            <TextField
+            id="outlined-basic" label="Password" variant="outlined"
               type="password"
               name="password"
               placeholder="Password"
-              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
             />
           </label>
-          <button>Register</button>
+          <Button variant="contained" type='submit'>Register</Button>
         </FormStyled>
       )}
     </>

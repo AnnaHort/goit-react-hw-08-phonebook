@@ -6,6 +6,9 @@ import { logIn } from 'redux/auth/authOperations';
 import { isLoggedIn } from 'redux/auth/authSelectors';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 
+import Button from '@mui/material/Button';
+import { TextField } from '@mui/material';
+
 export const LoginForm = () => {
   const login = useSelector(isLoggedIn);
   const dispatch = useDispatch();
@@ -35,14 +38,14 @@ export const LoginForm = () => {
       ) : (
         <FormStyled onSubmit={handleSubmit}>
           <label>
-            <input type="email" name="email" placeholder="Email" />
+            <TextField id="outlined-basic" label="Email" variant="outlined"  type="email" name="email" placeholder="Email" />
           </label>
           <label>
-            <input type="password" name="password" placeholder="Password" />
+            <TextField id="outlined-basic" label="Password" variant="outlined" type="password" name="password" placeholder="Password" />
           </label>
-          <button>Log In</button>
+          <Button variant="contained" type='submit'>Log In</Button>
 
-          <Link to="/register">Registration</Link>
+          {/* <Link to="/register">Registration</Link> */}
         </FormStyled>
       )}
     </>

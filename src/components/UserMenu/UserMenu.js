@@ -4,6 +4,7 @@ import {
   ListElementStyle,
   TitleStyle,
   UserData,
+  UserMenuLinkStyle,
   UserMenuListStyle,
 } from './UserMenu.styled';
 import { useDispatch, useSelector } from 'react-redux';
@@ -30,10 +31,10 @@ export const UserMenu = () => {
         </ul>
         <UserMenuListStyle>
           <li>
-            <Link to="/contacts">My Phonebook</Link>
+            <UserMenuLinkStyle to="/contacts">My Phonebook</UserMenuLinkStyle>
           </li>
           <li>
-            <Link to="/login" onClick={()=> dispatch(logOut())}>Logout</Link>
+            <UserMenuLinkStyle to="/login" onClick={()=> dispatch(logOut())}>Logout</UserMenuLinkStyle>
           </li>
         </UserMenuListStyle>
       </ContainerStyled>
