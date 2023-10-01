@@ -3,13 +3,13 @@ import { Outlet } from 'react-router-dom';
 import { ListStyled, NavigationTextStyle } from './Navigation.styled';
 import { Menu } from 'components/Header/Menu';
 import { AuthNav } from 'components/Header/AuthNav';
-import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { isLoggedIn } from 'redux/auth/authSelectors';
+import { useAuth } from 'hooks';
 
 
 export const Navigation = () => {
 
-  const login = useSelector(isLoggedIn)
+  const { isLoggedIn } = useAuth();
+
 
   return (
     <>
@@ -18,7 +18,8 @@ export const Navigation = () => {
         <li>
           <NavigationTextStyle to="/">Navigation</NavigationTextStyle>
         </li>
-        {login ? <Menu/> :  <AuthNav/>}
+
+        {isLoggedIn ? <Menu /> : <AuthNav />}
 
       </ListStyled>
       </header>

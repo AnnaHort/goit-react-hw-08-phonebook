@@ -8,10 +8,10 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 import { logOut } from 'redux/auth/authOperations';
-import { user } from 'redux/auth/authSelectors';
+import { selectUser } from 'redux/auth/authSelectors';
 
 export const UserMenu = () => {
-  const userData = useSelector(user);
+  const userData = useSelector(selectUser);
 
   const { name, email } = userData;
   const dispatch = useDispatch()

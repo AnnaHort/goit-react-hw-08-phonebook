@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'redux/auth/authOperations';
 import { FormStyled } from './RegisterForm.styled';
-import { isLoggedIn } from 'redux/auth/authSelectors';
+import { selectIsLoggedIn } from 'redux/auth/authSelectors';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
@@ -9,7 +9,7 @@ import { TextField } from '@mui/material';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  const login = useSelector(isLoggedIn);
+  const login = useSelector(selectIsLoggedIn);
 
   const handleOnSubmit = async e => {
     e.preventDefault();

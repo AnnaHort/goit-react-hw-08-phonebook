@@ -2,14 +2,14 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { FormStyled } from './LoginForm.styled';
 import { logIn } from 'redux/auth/authOperations';
-import { isLoggedIn } from 'redux/auth/authSelectors';
+import { selectIsLoggedIn } from 'redux/auth/authSelectors';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
 
 export const LoginForm = () => {
-  const login = useSelector(isLoggedIn);
+  const login = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
 
   const handleSubmit = async e => {
@@ -44,7 +44,6 @@ export const LoginForm = () => {
           </label>
           <Button variant="contained" type='submit'>Log In</Button>
 
-          {/* <Link to="/register">Registration</Link> */}
         </FormStyled>
       )}
     </>

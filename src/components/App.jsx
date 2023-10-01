@@ -6,8 +6,8 @@ import { UserMenu } from './UserMenu/UserMenu';
 import NavigationPage from './pages/NavigationPage/NavigationPage';
 import { useDispatch } from 'react-redux';
 import { fetchCurentUser } from 'redux/auth/authOperations';
+import { PrivateRoute } from './PrivateRoute';
 
-// const Movies = lazy(() => import('../components/Movies/MoviesPages'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 const ContactsPage = lazy(() => import('./pages/ContactsPage/ContactsPage'));
@@ -15,8 +15,8 @@ const ContactsPage = lazy(() => import('./pages/ContactsPage/ContactsPage'));
 export const App = () => {
   const dispatch = useDispatch();
 
-  useEffect(()=>{
-    dispatch(fetchCurentUser())
+  useEffect(() => {
+    dispatch(fetchCurentUser());
   }, [dispatch]);
 
   return (
@@ -27,8 +27,25 @@ export const App = () => {
 
           <Route path="register" element={<RegisterPage />}></Route>
           <Route path="login" element={<LoginPage />}></Route>
-          <Route path="contacts" element={<ContactsPage />}></Route>
-          <Route path="UserMenu" element={<UserMenu />}></Route>
+
+          {/* <Route path="contacts" element={<ContactsPage />}></Route>
+          <Route path="UserMenu" element={<UserMenu />}></Route> */}
+
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute redirectTo="/contacts" component={<LoginPage />} />
+            }
+          />
+
+          <Route
+            path="UserMenu"
+            element={
+              <PrivateRoute redirectTo="/UserMenu" component={<LoginPage />} />
+            }
+          />
+
+
         </Route>
       </Routes>
 

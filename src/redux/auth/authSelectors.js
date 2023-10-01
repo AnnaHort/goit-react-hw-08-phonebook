@@ -1,4 +1,4 @@
-export const user = state => state.authReduser.user;
-export const token = state => state.authReduser.token;
-export const isLoggedIn = state => state.authReduser.isLoggedIn;
-export const isRefreshing = state => state.authReduser.isRefreshing;
+export const selectUser = state => state.authReduser.user;
+export const selectToken = state => state.authReduser.token;
+export const selectIsLoggedIn = state => state.authReduser.isLoggedIn;
+export const selectIsRefreshing = state => state.authReduser.isRefreshing;
