@@ -16,10 +16,3 @@ border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
     outline: none;
 `
-
-// export const LoginButtonStyled = styled(Link)`
-// width: 190px;
-// `
-// export const RegistrationButtonStyled = styled.button`
-// width: 160px;
-// `
