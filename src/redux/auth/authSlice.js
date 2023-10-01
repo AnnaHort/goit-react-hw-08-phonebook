@@ -18,19 +18,16 @@ const authSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
-      console.log(action.payload);
     },
     [logIn.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
-      console.log(action.payload.token);
     },
     [logOut.fulfilled](state,action){
       state.user = '';
       state.token = '';
       state.isLoggedIn = false;
-      console.log(action.payload);
     }
   },
 });
