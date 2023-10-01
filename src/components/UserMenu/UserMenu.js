@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
 import {
   ContainerStyled,
   ListElementStyle,
-  TitleStyle,
   UserData,
   UserMenuLinkStyle,
   UserMenuListStyle,
@@ -19,7 +17,7 @@ export const UserMenu = () => {
   const dispatch = useDispatch()
   return (
     <>
-      <TitleStyle>User Menu</TitleStyle>
+ 
       <ContainerStyled>
         <ul>
           <ListElementStyle>
@@ -31,7 +29,7 @@ export const UserMenu = () => {
         </ul>
         <UserMenuListStyle>
           <li>
-            <UserMenuLinkStyle to="/contacts">My Phonebook</UserMenuLinkStyle>
+            <UserMenuLinkStyle to="/contacts">My Phonebook </UserMenuLinkStyle>
           </li>
           <li>
             <UserMenuLinkStyle to="/login" onClick={()=> dispatch(logOut())}>Logout</UserMenuLinkStyle>

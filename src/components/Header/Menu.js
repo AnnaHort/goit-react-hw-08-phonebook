@@ -1,13 +1,13 @@
-import { NavLink } from 'react-router-dom';
+import { NavLinkStyled } from './AuthNav.styled';
 
 export const Menu = () => {
   return (
     <>
       <li>
-        <NavLink to="/UserMenu">User Menu</NavLink>
+        <NavLinkStyled to="/UserMenu">User Menu</NavLinkStyled>
       </li>
       <li>
-        <NavLink to="/contacts">Contacts</NavLink>
+        <NavLinkStyled to="/contacts">Contacts</NavLinkStyled>
       </li>
     </>
   );
