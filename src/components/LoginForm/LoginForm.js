@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { FormStyled } from './LoginForm.styled';
-import { logIn } from 'redux/auth/operations';
-import { isLoggedIn } from 'redux/auth/selectors';
+import { logIn } from 'redux/auth/authOperations';
+import { isLoggedIn } from 'redux/auth/authSelectors';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 
 export const LoginForm = () => {

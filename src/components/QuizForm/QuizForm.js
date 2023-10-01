@@ -25,7 +25,7 @@ export const QuizForm = () => {
       const contactExists = items.some(
         item =>
         item.name === contactData.name &&
-        item.phone === contactData.number
+        item.number === contactData.number
       );
 
       if (!contactExists) {

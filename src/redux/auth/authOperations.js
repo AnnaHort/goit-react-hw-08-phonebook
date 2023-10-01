@@ -3,7 +3,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
-
 // токен
 const token = {
   set(token) {
@@ -13,7 +12,6 @@ const token = {
     axios.defaults.headers.common.Authorization = '';
   },
 };
-
 
 // реєстрація
 export const register = createAsyncThunk(
@@ -43,26 +41,34 @@ export const logIn = createAsyncThunk(
   }
 );
 
-
 // вихід з системи
 export const logOut = createAsyncThunk(
   'auth/logout',
-  async(userData, thunkAPI) => {
+  async (userData, thunkAPI) => {
     try {
       await axios.post('/users/logout', userData);
-      token.unset()
+      token.unset();
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-)
-// // вихід з системи
-// export const logOut = createAsyncThunk('/users/logout', async (_, thunkAPI) => {
-//   try {
-//     await axios.post('/users/logout');
-//     // After a successful logout, remove the token from the HTTP header
-//     clearAuthHeader();
-//   } catch (error) {
-//     return thunkAPI.rejectWithValue(error.message);
-//   }
-// });
+);
+
+// refresh user
+export const fetchCurentUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+    if (persistedToken === null || persistedToken === '') {
+      return state;
+    }
+    token.set(persistedToken);
+    try {
+      const response = await axios.get('/users/current');
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

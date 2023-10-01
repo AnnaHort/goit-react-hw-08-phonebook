@@ -7,8 +7,9 @@ import {
   UserMenuListStyle,
 } from './UserMenu.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { user } from 'redux/auth/selectors';
-import { logOut } from 'redux/auth/operations';
+
+import { logOut } from 'redux/auth/authOperations';
+import { user } from 'redux/auth/authSelectors';
 
 export const UserMenu = () => {
   const userData = useSelector(user);

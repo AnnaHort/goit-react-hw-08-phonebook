@@ -4,7 +4,8 @@ import { ListStyled, NavigationTextStyle } from './Navigation.styled';
 import { Menu } from 'components/Header/Menu';
 import { AuthNav } from 'components/Header/AuthNav';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { isLoggedIn } from 'redux/auth/selectors';
+import { isLoggedIn } from 'redux/auth/authSelectors';
+
 
 export const Navigation = () => {
 
