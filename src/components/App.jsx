@@ -7,6 +7,7 @@ import NavigationPage from './pages/NavigationPage/NavigationPage';
 import { useDispatch } from 'react-redux';
 import { fetchCurentUser } from 'redux/auth/authOperations';
 import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
 
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
@@ -25,27 +26,42 @@ export const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<NavigationPage />}></Route>
 
-          <Route path="register" element={<RegisterPage />}></Route>
-          <Route path="login" element={<LoginPage />}></Route>
+          <Route
+            path="register"
+            element={
+              <RestrictedRoute
+                redirectTo="/UserMenu"
+                component={<RegisterPage />}
+              />
+            }
+          />
 
-          {/* <Route path="contacts" element={<ContactsPage />}></Route>
-          <Route path="UserMenu" element={<UserMenu />}></Route> */}
+          <Route
+            path="login"
+            element={
+              <RestrictedRoute
+                redirectTo="/UserMenu"
+                component={<LoginPage />}
+              />
+            }
+          />
 
           <Route
             path="contacts"
             element={
-              <PrivateRoute redirectTo="/contacts" component={<LoginPage />} />
+              <PrivateRoute
+                redirectTo="/contacts"
+                component={<ContactsPage />}
+              />
             }
           />
 
           <Route
             path="UserMenu"
             element={
-              <PrivateRoute redirectTo="/UserMenu" component={<LoginPage />} />
+              <PrivateRoute redirectTo="/login" component={<UserMenu />} />
             }
           />
-
-
         </Route>
       </Routes>
 

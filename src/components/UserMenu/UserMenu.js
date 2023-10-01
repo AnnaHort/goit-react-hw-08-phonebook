@@ -6,6 +6,7 @@ import {
   UserMenuListStyle,
 } from './UserMenu.styled';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { logOut } from 'redux/auth/authOperations';
 import { selectUser } from 'redux/auth/authSelectors';
@@ -32,7 +33,8 @@ export const UserMenu = () => {
             <UserMenuLinkStyle to="/contacts">My Phonebook </UserMenuLinkStyle>
           </li>
           <li>
-            <UserMenuLinkStyle to="/login" onClick={()=> dispatch(logOut())}>Logout</UserMenuLinkStyle>
+          {/* <Link as={Link} to="/login" onClick={()=> dispatch(logOut())}>Logout</Link> */}
+            <UserMenuLinkStyle as={Link} to="/login" onClick={()=> dispatch(logOut())}>Logout</UserMenuLinkStyle>
           </li>
         </UserMenuListStyle>
       </ContainerStyled>
