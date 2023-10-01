@@ -17,15 +17,15 @@ export const QuizForm = () => {
 
     const contactData = {
       name: newName,
-      phone: newPhoneNumber,
+      number: newPhoneNumber,
     };
 
-    if (contactData.name !== '' && contactData.phone !== '') {
+    if (contactData.name !== '' && contactData.number !== '') {
   
       const contactExists = items.some(
         item =>
         item.name === contactData.name &&
-        item.phone === contactData.phone
+        item.phone === contactData.number
       );
 
       if (!contactExists) {

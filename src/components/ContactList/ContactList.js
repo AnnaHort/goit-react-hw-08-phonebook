@@ -52,7 +52,7 @@ export const ContactList = () => {
           filteredItems.map(contact => (
             <ListEl key={contact.id}>
               <p>{contact.name}</p>
-              <p>{contact.phone}</p>
+              <p>{contact.number}</p>
               <ContactButton onClick={() => handleDelete(contact)}>
                 Delete
               </ContactButton>
