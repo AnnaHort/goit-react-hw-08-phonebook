@@ -33,7 +33,6 @@ export const LoginForm = () => {
         <input type="password" name="password" placeholder="Password" />
       </label>
       <button>Log In</button>
-      {/* <Link to="/userMenu">Log In</Link> */}
 
       <Link to="/register">Registration</Link>
     </FormStyled>

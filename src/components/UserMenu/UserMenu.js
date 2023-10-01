@@ -6,13 +6,15 @@ import {
   UserData,
   UserMenuListStyle,
 } from './UserMenu.styled';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { user } from 'redux/auth/selectors';
+import { logOut } from 'redux/auth/operations';
 
 export const UserMenu = () => {
   const userData = useSelector(user);
-  console.log(userData);
-const {name, email} = userData;
+
+  const { name, email } = userData;
+  const dispatch = useDispatch()
   return (
     <>
       <TitleStyle>User Menu</TitleStyle>
@@ -30,7 +32,8 @@ const {name, email} = userData;
             <Link to="/contacts">My Phonebook</Link>
           </li>
           <li>
-            <Link to="/login">Logout</Link>
+            <button onClick={()=> dispatch(logOut())}>Logout</button>
+            <Link to="/login" onClick={()=> dispatch(logOut())}>Logout</Link>
           </li>
         </UserMenuListStyle>
       </ContainerStyled>

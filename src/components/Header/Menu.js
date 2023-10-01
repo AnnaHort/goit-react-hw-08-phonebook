@@ -9,6 +9,9 @@ export const Menu = () => {
       <li>
         <NavLink to="/contacts">Contacts</NavLink>
       </li>
+      <li>
+        <NavLink to='/login'>LogOut</NavLink>
+      </li>
     </>
   );
 };
